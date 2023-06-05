@@ -1,0 +1,90 @@
+.content{
+    height: 1500px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.carousel-container{
+    display: flex;
+    height: 40%;
+    align-items: center;
+    text-align: center;
+}
+.carousel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-items {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    overflow: hidden; 
+    height: 500px;
+    padding: 10%;
+    box-sizing: border-box;
+    background-size: 100% auto;
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+  
+.carousel-button{
+    width: 50px;
+    height: 500px;
+    line-height: 500px;
+    font-size: 50px;
+    cursor:pointer;
+    margin: 20px;
+    position:absolute;
+    z-index: 10;
+    color: white;
+}
+
+#previous-button{
+    left: 10%;
+}
+
+#next-button{
+    right: 10%;
+}
+
+.about-us{
+    height: 30%;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.about-us-text{
+    flex: 1;
+    padding-right: 20px;
+}
+
+.about-us-image{
+    flex: 1;
+}
+
+.our-events{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.our-events h1{
+    padding: 20px;
+}
+
+.event-icon-container{
+    display: flex;
+}
+
+.event-icon{
+    padding: 20px;
+}

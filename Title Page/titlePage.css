@@ -65,6 +65,7 @@
 .about-us-text{
     flex: 1;
     padding-right: 20px;
+    color: white;
 }
 
 .about-us-image{
@@ -81,10 +82,28 @@
     padding: 20px;
 }
 
-.event-icon-container{
+.event-icon-container {
     display: flex;
-}
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .event-icon {
+    width: 140px;
+    height: 230px;
+  }
 
-.event-icon{
+  .event-icon img{
+    height: 140px;
+    width: 140px;
     padding: 20px;
-}
+    box-sizing: border-box;
+  }
+
+  .event-icon p{
+    height: 50px;
+    line-height: 20px;
+    text-align: center;
+  }

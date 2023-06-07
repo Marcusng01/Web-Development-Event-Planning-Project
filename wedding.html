@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event2u Weddings</title>
+    <link rel="icon" href="All Pages/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="event-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="header-buttons">
+            <div class="header-logo"><img src="All Pages/logo.png" alt="Logo"></div>
+            <div class="header-logo-excluder">
+                <div class="header-button" onclick="window.location.href = 'index.html'">Home</div>
+                <div class="header-button header-dropdown-button" onclick="window.location.href = '#'">Events <span class='fas fa-angle-right'></span></div>
+                <div class="header-button" onclick="window.location.href = 'about.html'">About</div>
+                <div class="header-button" onclick="window.location.href = 'apply.html'">Apply</div>
+            </div>
+        </div>
+        <ul class="header-dropdown-container">
+            <li class="dropdown-item" onclick="window.location.href = 'annual-dinner.html'">Annual Dinner</li>
+            <li class="dropdown-item" onclick="window.location.href = 'backdrop.html'">Backdrop</li>
+            <li class="dropdown-item" onclick="window.location.href = 'wedding.html'">Wedding</li>
+            <li class="dropdown-item" onclick="window.location.href = 'roadshow.html'">Roadshow</li>
+            <li class="dropdown-item" onclick="window.location.href = 'sound-&-lighting.html'">Sound & Lighting</li>
+            <li class="dropdown-item" onclick="window.location.href = 'fabrication.html'">Fabrication</li>
+            <li class="dropdown-item" onclick="window.location.href = 'e-sport-campaigns.html'">E-Sport Campaigns</li>
+        </ul> 
+    </div>
+    <div class="content" style="z-index: 0;">
+        <div class="video-container">
+            <video autoplay loop>
+                <source src="Wedding/video/Wedding Video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h1 style="margin-top: 150px;">WE HANDLE</h1>
+        <div class="description-container">
+            <div class="description-row">
+                <div class="description-image"><img src="Wedding/images/malay.jpg" alt="Malay Wedding"></div>
+                <div class="description-text">
+                    <h2>Malay Weddings</h2>
+                    <br>
+                    <ul>
+                        <li>Akad Nikah</li>
+                        <li>Bersanding</li>
+                        <li>Traditional Attire</li>
+                        <li>Connections to Adat Perkahwinan Professionals</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="description-row" style="flex-direction: row-reverse;">
+                <div class="description-image"><img src="Wedding/images/chinese.png" alt="Chinese Wedding"></div>
+                <div class="description-text">
+                    <h2>Chinese Weddings</h2>
+                    <br>
+                    <ul>
+                        <li>Tea Ceremony</li>
+                        <li>Banquet</li>
+                        <li>Traditional Attire</li>
+                        <li>Connections to Cultural Customs Professionals</li>
+                    </ul>
+                </div>            </div>
+            <div class="description-row">
+                <div class="description-image"><img src="Wedding/images/indian.jpeg" alt="Indian Wedding"></div>
+                <div class="description-text">
+                    <h2>Indian Weddings</h2>
+                    <br>
+                    <ul>
+                        <li>Mehndi</li>
+                        <li>Sangeet</li>
+                        <li>Wedding Ceremony</li>
+                        <li>Reception feasting, dancing and performances</li>
+                    </ul>
+                </div>            </div>
+            <div class="description-row" style="flex-direction: row-reverse;">
+                <div class="description-image"><img src="Wedding/images/western.jpg" alt="Western Wedding"></div>
+                <div class="description-text">
+                    <h2>Western Weddings</h2>
+                    <br>
+                    <ul>
+                        <li>Church Ceremony</li>
+                        <li>Unity Candle or Sand Ceremony</li>
+                        <li>White Wedding Attire</li>
+                        <li>Wedding Reception</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="display:flex; justify-content: center;">
+            <div class="apply-now-button" onclick="window.location.href = 'apply.html'">Apply Now</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo"><img src="All Pages/logo.png" alt="Logo"></div>
+        <div class="contact-text">For further enquiries, scan the QR code to contact us on WhatsApp</div>
+        <div class="qr-code"></div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src=""></script>
+
+</body>
+</html>

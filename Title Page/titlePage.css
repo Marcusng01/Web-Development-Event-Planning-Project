@@ -87,11 +87,11 @@
     cursor: pointer;
     margin-top: 30px;
     transition: box-shodow 0.15s;
-  }
+}
   
-  .about-us-button:hover{
+.about-us-button:hover{
     box-shadow: 5px 5px 10px rgba(0, 157, 255, .4);
-  }
+}
 
 
 .our-events{

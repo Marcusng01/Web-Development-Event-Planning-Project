@@ -28,7 +28,7 @@ li{
 }
 
 .header{
-    background-color: rgb(29, 29, 29);
+    background-color: rgba(29, 29, 29, 0.85);
     box-sizing: border-box;
     color: #fff;
     position: fixed;
@@ -43,16 +43,10 @@ li{
 
 .header-buttons{
     display: flex;
-    justify-content: space-around;
-}
-.header-button{
-    line-height: 120px;
-    flex: 1;
-    text-align: center;
 }
 
 .header-logo {
-    flex: .8;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,6 +55,28 @@ li{
 .header-logo img {
     height: 120px;
 }
+
+
+.header-logo-excluder{
+    display: flex;
+    flex: 4;
+    justify-content: right;
+}
+
+.header-button{
+    line-height: 120px;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+    text-align: center;
+    transition: .2s background-color;
+    transition: .2s opacity;
+}
+
+.header-button:hover{
+    opacity: .7;
+    background-color: rgb(68, 68, 68);
+}
+
 
 .header-button:hover{
     cursor: pointer;

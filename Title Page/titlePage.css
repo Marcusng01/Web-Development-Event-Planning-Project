@@ -2,12 +2,11 @@
     height: 1500px;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
 }
 
 .carousel-container{
     display: flex;
-    height: 40%;
     align-items: center;
     text-align: center;
 }
@@ -41,24 +40,24 @@
     line-height: 500px;
     font-size: 50px;
     cursor:pointer;
-    margin: 20px;
     position:absolute;
     z-index: 10;
     color: white;
 }
 
 #previous-button{
-    left: 10%;
+    left: 2%;
 }
 
 #next-button{
-    right: 10%;
+    right: 2%;
 }
 
 .about-us{
     height: 30%;
     display: flex;
     align-items: center;
+    padding-top: 5%;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -72,12 +71,20 @@
     flex: 1;
 }
 
+.about-us-image img{
+    border-radius: 20px;
+}
+
+
 .our-events{
     height: 30%;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
+
 .our-events h1{
     padding: 20px;
 }
@@ -85,9 +92,9 @@
 .event-icon-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     overflow: hidden;
-    width: 100%;
+    width: 90%;
   }
   
   .event-icon {
@@ -106,4 +113,13 @@
     height: 50px;
     line-height: 20px;
     text-align: center;
+  }
+
+  @media (max-width: 1103px) {
+    .our-events{
+        flex: 2;
+    }
+    .content{
+        height: 2200px;
+    }
   }

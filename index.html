@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/Title Page/titlePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
@@ -14,13 +15,13 @@
 <body>
     <div class="header">
         <div class="header-buttons">
-            <div class="header-logo">Logo</div>
+            <div class="header-logo"><img src="All Pages/logo.png" alt="Logo"></div>
             <div class="header-button">Home</div>
+            <div class="header-button header-dropdown-button">Events <span class='fas fa-angle-right'></span></div>
             <div class="header-button">About</div>
             <div class="header-button">Apply</div>
-            <div class="header-button header-dropdown-button">Events</div>
         </div>
-        <div class="header-dropdown-container" style="z-index: 0;">
+        <div class="header-dropdown-container">
             <li class="dropdown-item">Annual Dinner</li>
             <li class="dropdown-item">Backdrop</li>
             <li class="dropdown-item">Wedding</li>
@@ -30,7 +31,8 @@
             <li class="dropdown-item">E-Sport Campaigns</li>
         </div> 
     </div>
-    <div class="content" style="z-index: 999;">
+    <div class="content" style="z-index: 0;">
+        <div style="height:120px;width: 100%;"></div>
         <div class="carousel-container">
             <div class="carousel-button" id="previous-button"><</div>
             <div class="carousel">
@@ -52,7 +54,7 @@
                 <p>We are a event planning company with many years of experience, contacts and resources for just about any occasion.</p>
                 <div class="about-us-button">Learn More!</div>
             </div>
-            <div class="about-us-image" > The image will be inserted here</div>
+            <div class="about-us-image"> <img src="Title Page/Images/about-us.jpg" alt="About Us"></div>
         </div>
         <div class="our-events">
             <h1>Our Events</h1>
@@ -69,9 +71,9 @@
     </div>
 
     <div class="footer">
-        <div class="footer-logo">logo</div>
-        <div class="contact-text">Contact us on WhatsApp via the QR code for more enquiries</div>
-        <div class="qr-code">qrcode</div>
+        <div class="footer-logo"><img src="All Pages/logo.png" alt="Logo"></div>
+        <div class="contact-text">For further enquiries, scan the QR code to contact us on WhatsApp</div>
+        <div class="qr-code"></div>
     </div>
 
     <script type="text/javascript" src="script.js"></script>

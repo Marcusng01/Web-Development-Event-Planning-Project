@@ -20,20 +20,20 @@ body{
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 
 li{
     list-style-type: none;
-    /* display: none; */
 }
 
 .header{
-    background-color: #333;
+    background-color: rgb(29, 29, 29);
     box-sizing: border-box;
     color: #fff;
-    position: sticky;
-    width: 80%;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
 }
 
 .header *{
@@ -45,11 +45,21 @@ li{
     display: flex;
     justify-content: space-around;
 }
-.header-buttons>*{
-    padding-top: 20px;
-    padding-bottom: 20px;
+.header-button{
+    line-height: 120px;
     flex: 1;
     text-align: center;
+}
+
+.header-logo {
+    flex: .8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo img {
+    height: 120px;
 }
 
 .header-button:hover{
@@ -84,25 +94,42 @@ li{
 }
 
 .content{
-    background-color: black;
     box-sizing: border-box;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 
 .footer {
     display: flex;
-    background-color: #333;
+    background-color: rgb(29, 29, 29);
     color: #fff;
-    padding: 20px;
     text-align: center;
-    width: 80%;
+    width: 100%;
     justify-content: space-around;
     box-sizing: border-box;
 }
 
 .footer>* {
-    padding: 10px;
+    flex: 1;
 }
 
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo img {
+    height: 150px;
+}
+
+.contact-text{
+    padding: 75px;
+    box-sizing: border-box;
+}
+
+.qr-code{
+    background-image: url(https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/<60124839152);
+    background-repeat: no-repeat;
+    background-position: center;
+}

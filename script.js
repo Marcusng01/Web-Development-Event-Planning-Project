@@ -1,22 +1,29 @@
 //Dropdown Logic
+const dropdownButton = document.querySelector('.header-dropdown-button');
+const dropdownContainer = document.querySelector('.header-dropdown-container');
+const eventButtonSpan = document.querySelector(".header-dropdown-button span");
 
-var dropdownButton = document.querySelector('.header-dropdown-button');
-var dropdownContainer = document.querySelector('.header-dropdown-container');
-
-console.log(dropdownButton)
-
-dropdownButton.addEventListener('mouseenter', function() {
+function expand(){
+    console.log("running expand");
     dropdownContainer.classList.add('expanded');
-});
+    eventButtonSpan.classList.remove('fa-angle-right');
+    eventButtonSpan.classList.add('fa-angle-down');
 
-dropdownContainer.addEventListener('mouseenter', function() {
-    dropdownContainer.classList.add('expanded');
-});
+}
 
-dropdownButton.addEventListener('mouseleave', function() {
+function contract(){
+    console.log("running contract");
     dropdownContainer.classList.remove('expanded');
-});
+    eventButtonSpan.classList.remove('fa-angle-down');
+    eventButtonSpan.classList.add('fa-angle-right');
+}
 
-dropdownContainer.addEventListener('mouseleave', function() {
-    dropdownContainer.classList.remove('expanded');
-});
+dropdownButton.addEventListener('mouseenter', expand);
+
+dropdownContainer.addEventListener('mouseenter', expand);
+
+dropdownButton.addEventListener('mouseleave', contract);
+
+dropdownContainer.addEventListener('mouseleave', contract);
+
+

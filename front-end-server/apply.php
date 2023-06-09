@@ -79,11 +79,11 @@
                     <div class="form-row">
                         <div class="form-item">
                             <label for="name">Name:</label>
-                            <input type="text" name="name" id="name">
+                            <input type="text" name="name" id="name" required>
                         </div>
                         <div class="form-item">
                             <label for="state">State:</label>
-                            <select name="state">
+                            <select name="state" required>
                                 <option value="">Select a state</option>
                                 <option value="Johor">Johor</option>
                                 <option value="Kedah">Kedah</option>
@@ -107,29 +107,39 @@
                     <div class="form-row">
                         <div class="form-item">
                             <label for="mobile">Mobile Number:</label>
-                            <input type="text" name="mobile" id="mobile">
+                            <input type="text" name="mobile" id="mobile" required pattern="[0-9]*" inputmode="numeric" title="Please enter only numeric values">
                         </div>
                         <div class="form-item">
                             <label for="event-date">Event Date:</label>
-                            <input type="date" name="event-date" id="event-date">
+                            <input type="date" name="event-date" id="event-date" min="<?php echo date('Y-m-d', strtotime('+7 day')); ?>" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-item">
                             <label for="email">Email Address:</label>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="email" id="email" required>
                         </div>
                         <div class="form-item">
                             <label for="event-type">Event Type:</label>
-                            <input type="text" name="event-type" id="event-type">
+                            <select name="event-type" required>
+                                <option value="">Select a Type</option>
+                                <option value="Annual Dinner">Annual Dinner</option>
+                                <option value="Backdrop">Backdrop</option>
+                                <option value="Wedding">Wedding</option>
+                                <option value="Roadshow">Roadshow</option>
+                                <option value="Sound & Lighting">Sound & Lighting</option>
+                                <option value="Fabrication">Fabrication</option>
+                                <option value="E-Sport Campaigns">E-Sport Campaigns</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="form-notes">
+                    <div class="form-notes" required>
                         <label for="notes">Additional Notes:</label>
                         <textarea name="notes" id="notes"></textarea>
                     </div>
                     <input id="submit-button" type="submit" value="Submit">
                 </form>
+                <p style="margin-top:20px">*Events have to be booked at least 1 week in advance!</p>
             </div>
         </div>
     </div>
@@ -143,3 +153,67 @@
     <script type="text/javascript" src="Apply/apply-script.js"></script>
 </body>
 </html>
+
+<?php 
+    //Only run the code here if the HTTP has a post requests
+    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+        //DB and file details
+        $database = "event2u";
+        $table = "event_applications";    
+
+        //Data from form
+        $name = $_POST['name'];
+        $mobile = $_POST['mobile'];
+        $email = $_POST['email'];
+        $state = $_POST['state'];
+        $date = $_POST['event-date'];
+        $type = $_POST['event-type'];
+        $notes = $_POST['notes'];
+        
+        //Replace the details based on configuration of server
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        
+        // Create a new MySQLi object
+        $conn = new mysqli($servername, $username, $password);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        //Create Query
+        $query="-- Create database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS $database;
+
+-- Use the database
+USE $database;
+
+-- Create table if it doesn't exist
+CREATE TABLE IF NOT EXISTS $table (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    state VARCHAR(255) NOT NULL,
+    mobile_number VARCHAR(255) NOT NULL,
+    event_date VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    event_type VARCHAR(255) NOT NULL,
+    additional_notes TEXT,
+    status INT(1) NOT NULL
+);
+
+-- Insert data
+INSERT INTO $table (name, state, mobile_number, event_date, email, event_type, additional_notes, status) VALUES ('$name', '$state', '$mobile', '$date', '$email', '$type', '$notes', 0);
+";
+        // Execute the SQL queries
+        $conn->multi_query($query);
+
+        // Close the connection
+        $conn->close();
+        echo '<script type="text/javascript">';
+        echo ' alert("Your application has been submitted!")';
+        echo '</script>';
+    }
+?>

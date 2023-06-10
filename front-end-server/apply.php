@@ -12,6 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
+    <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
 </head>
 <body>
     <div class="header">
@@ -38,7 +43,7 @@
         <div class="image-container">
             <img src="Apply/images/apply main.jpg" alt="Apply Now!">
         </div>
-        <h1 style="margin-top: 10%; margin-bottom:3%">Apply Now!</h1>
+        <h1 style="margin-top: 10%; margin-bottom:3%">Apply Now&#10071;</h1>
         <div class="apply-container">
             <div class="contact-container">
                 <div class="contact-header">

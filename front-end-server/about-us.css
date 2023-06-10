@@ -1,0 +1,99 @@
+@font-face {
+  font-family: CustomFont;
+  src: url('path/to/font/font-file.ttf');
+}
+
+.content{
+  height: 3410px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.image-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 98%;
+  object-fit: cover;
+}
+
+.about-us-container{
+  padding: 30px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.about-us-container *{
+  box-sizing: border-box;
+}
+
+.description-row{
+  height: 100%;
+  display: flex;
+  width: 100%;
+  margin: 70px; 
+}
+
+.description-text{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-right: 50px;
+  float: left;
+  flex: 1;
+}
+
+.description-text *{
+  font-size: 20px;
+  text-align: justify;
+}
+
+.description-image{
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: right;
+}
+
+.description-image img{
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 20   px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+}
+
+.description-text li {
+  font-size: 22px;
+  color: rgb(208, 252, 255);
+}
+
+.contact{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.content p{
+  text-align: left;
+}
+
+.qrcode{
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 100%;
+  height: 100%;
+}

@@ -49,6 +49,11 @@
             width: 300px;
         }
     </style>
+    <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 </head>
 <body>
     <h1>List of Orders</h1>
@@ -63,7 +68,7 @@
         $password = "";
         
         // Create a new MySQLi object
-        $conn = new mysqli($servername, $username, $password,$database); 
+        $conn = new mysqli($servername, $username, $password); 
 
         // Check connection
         if ($conn->connect_error) {
@@ -77,13 +82,38 @@
                 //get value from Select Box's option
                 $status = $_POST[$id];
                 //create query to alter data based on ID and new status value
-                $query = "UPDATE $table SET status = '$status' WHERE id = '$id'";
+                $query = "USE $database; UPDATE $table SET status = '$status' WHERE id = '$id'";
                 // Execute the SQL queries
                 $conn->multi_query($query);
+                while(mysqli_next_result($conn)){;}
+                echo"<script>
+                alert('Succesful Update!')
+                </script>"; 
             }
         }
 
-        // Retrieve data from the table
+        //Create database and table if doesnt exist
+        $createQuery="-- Create database if it doesn't exist
+        CREATE DATABASE IF NOT EXISTS $database;
+        
+        -- Use the database
+        USE $database;
+        
+        -- Create table if it doesn't exist
+        CREATE TABLE IF NOT EXISTS $table (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            state VARCHAR(255) NOT NULL,
+            mobile_number VARCHAR(255) NOT NULL,
+            event_date VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            event_type VARCHAR(255) NOT NULL,
+            additional_notes TEXT,
+            status INT(1) NOT NULL
+        )";
+        $conn->multi_query($createQuery);
+        //wait till the previous multi_query ends before starting the next one
+        while(mysqli_next_result($conn)){;}
         $query = "SELECT * FROM $table";
         $result = $conn->query($query);
 

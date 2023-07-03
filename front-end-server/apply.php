@@ -116,7 +116,7 @@
                         </div>
                         <div class="form-item">
                             <label for="event-date">Event Date:</label>
-                            <input type="date" name="event-date" id="event-date" min="<?php echo date('Y-m-d', strtotime('+7 day')); ?>" required>
+                            <input type="date" name="event-date" id="event-date" min="<?php echo date('Y-m-d', strtotime('+8 day')); ?>" required>
                         </div>
                     </div>
                     <div class="form-row">

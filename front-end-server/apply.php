@@ -74,7 +74,7 @@
                     </div>
                     <div class="location">
                         <h3>Location</h3>
-                        <img src="Apply/images/location.png" alt="Logo">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.165781930883!2d101.66609208436842!3d3.0502407458428293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4ae7f2b662d5%3A0x24640a80dedccc95!2sPavilion%20Bukit%20Jalil!5e0!3m2!1sen!2smy!4v1688404465585!5m2!1sen!2smy" width="620" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
